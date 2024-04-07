@@ -11,7 +11,7 @@ const ClientForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const updatedReqProm = generateReqProm(formData);
-    console.log(updatedReqProm);
+    // console.log(updatedReqProm);
 
     // Write updatedReqProm to a local JavaScript file
 
@@ -19,7 +19,7 @@ const ClientForm = () => {
     navigate("policyStatus");
 
     // Log updatedReqProm (optional)
-    console.log(updatedReqProm);
+    // console.log(updatedReqProm);
   };
 
   const handleFormFieldChange = (fieldName, e) => {
@@ -30,9 +30,14 @@ const ClientForm = () => {
       <Boxes />
       <div className="flex justify-center items-center min-h-screen mt-50 z-50">
         <div className="bg-[#1c1c24] flex justify-center items-center flex-col rounded-[10px] sm:p-10 p-4 mt-50 w-[500px]">
+          <div className="flex justify-center items-center p-[16px] sm:min-w-[380px] bg-[#3a3a43] rounded-[10px]">
+            <h1 className="font-epilogue font-bol sm:text-[25px] text-[18px] leading-[38px] text-white">
+              Personal Details
+            </h1>
+          </div>
           <form
             onSubmit={handleSubmit}
-            className="w-full mt-[35px] flex flex-col gap-[30px]"
+            className="w-full mt-5 flex flex-col gap-[30px]"
           >
             <div className="flex flex-wrap gap-[40px] z-50"></div>
             <label className="flex-1 w-full flex flex-col">

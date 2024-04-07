@@ -44,7 +44,7 @@ function Home() {
       `A character with the following characteristics: ${character} and mood: ${mood}.`,
       { value: fee }
     );
-    console.log(result);
+    // console.log(result);
   };
 
   const getArt = async (character, mood) => {
@@ -55,7 +55,7 @@ function Home() {
       50,
       `A character with the following characteristics: ${character} and mood: ${mood}.`
     );
-    console.log(`https://ipfs.io/ipfs/${result}`);
+    // console.log(`https://ipfs.io/ipfs/${result}`);
     setArtURL(`https://ipfs.io/ipfs/${result}`);
   };
 
@@ -66,7 +66,7 @@ function Home() {
     contract = new ethers.Contract(contractAddress, abi, signer);
     let fee = await contract.estimateFee(11);
     let result = await contract.calculateAIResult(11, prompt, { value: fee });
-    console.log(result);
+    // console.log(result);
   };
 
   const getAIResult = async (prompt) => {
@@ -74,7 +74,7 @@ function Home() {
     let signer = provider.getSigner();
     contract = new ethers.Contract(contractAddress, abi, signer);
     let result = await contract.getAIResult(11, prompt);
-    console.log(result);
+    // console.log(result);
     setNotation(result);
   };
 

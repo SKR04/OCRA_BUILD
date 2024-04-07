@@ -30,7 +30,7 @@ const PolicyStatus = () => {
     contract = new ethers.Contract(contractAddress, abi, signer);
     let fee = await contract.estimateFee(11);
     let result = await contract.calculateAIResult(11, prompt, { value: fee });
-    console.log(result);
+    // console.log(result);
   };
 
   const getAIResult = async (prompt) => {
@@ -38,7 +38,7 @@ const PolicyStatus = () => {
     let signer = provider.getSigner();
     contract = new ethers.Contract(contractAddress, abi, signer);
     let result = await contract.getAIResult(11, prompt);
-    console.log(result);
+    // console.log(result);
     setNotation(result);
   };
 
@@ -56,15 +56,15 @@ const PolicyStatus = () => {
       <button
         onClick={() => {
           if (isConnected) {
-            console.log(promptNew);
-            console.log(formData);
-            console.log(isFormDataEmpty(formData));
+            // console.log(promptNew);
+            // console.log(formData);
+            // console.log(isFormDataEmpty(formData));
             if (!isFormDataEmpty(formData)) {
               promptNew = generateReqProm(formData);
             } else {
               promptNew = defaultPrompt;
             }
-            console.log(promptNew);
+            // console.log(promptNew);
 
             calculateAIResult(promptNew);
           } else {
@@ -88,7 +88,7 @@ const PolicyStatus = () => {
           } else {
             promptNew = defaultPrompt;
           }
-          console.log(formData);
+          // console.log(formData);
           getAIResult(promptNew);
           setView(1);
         }}
